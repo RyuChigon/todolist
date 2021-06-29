@@ -8,7 +8,7 @@ class Preview extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.props.onSelect()}>{this.props.todo.title}</button>
+        <p>{this.props.todo.title}</p>
       </div>
     )
   }
