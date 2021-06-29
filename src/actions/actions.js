@@ -1,15 +1,10 @@
 import types from './types';
 
-export const writeTodo = (writer, title, content, password) => {
+export const writeTodo = (todo) => {
   console.log('Action::WRITE_TODO');
   return {
     type: types.WRITE_TODO,
-    todo: {
-      writer: writer,
-      title: title,
-      content: content,
-      password: password,
-    },
+    todo
   };
 };
 
@@ -26,16 +21,11 @@ export const unselectTodo = () => {
   return {types: types.UNSELECT_TODO};
 };
 
-export const modifyTodo = (writer, title, content, password) => {
+export const modifyTodo = (todo) => {
   console.log('ACtion::MODIFY_TODO');
   return {
     types: types.MODIFY_TODO,
-    todo: {
-      writer: writer,
-      title: title,
-      content: content,
-      password: password,   
-    },
+    todo
   };
 };
 
