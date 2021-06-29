@@ -1,0 +1,16 @@
+.writerInput {
+  width: 20%;
+}
+
+.titleInput {
+  width: 100%;
+}
+
+.contentInput {
+  width: 100%;
+  height: 100px;
+}
+
+.passwordInput {
+  width: 20%;
+}
