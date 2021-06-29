@@ -8,7 +8,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.WRITE_TODO: {
-      return {...state, todoList: [action.todoList, ...state.todoList]};
+      return {...state, todoList: [action.todo, ...state.todoList], index_todo: 0};
     }
 
     case types.SELECT_TODO: {
