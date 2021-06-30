@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Viewer from '../components/Viewer/Viewer';
-import { unselectTodo } from '../actions/actions';
+import { unselectTodo, deleteTodo } from '../actions/actions';
 import { Link } from 'react-router-dom';
 
 const mapStateToProps = (state) => {
@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    unselectTodo: () => dispatch(unselectTodo())
+    unselectTodo: () => dispatch(unselectTodo()),
+    deleteTodo: () => dispatch(deleteTodo()),
   }
 }
 
@@ -28,7 +29,7 @@ class ViewScreen extends React.Component {
     const index_todo = this.props.index_todo;
     return (
       <div>
-        <Viewer todo={todoList[index_todo]} onC={() => this.props.unselectTodo()} />
+        <Viewer todo={todoList[index_todo]} onDelete={() => this.props.deleteTodo()}  onMain={() => this.props.unselectTodo()} />
       </div>
     )
   }
