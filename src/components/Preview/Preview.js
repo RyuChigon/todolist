@@ -1,4 +1,5 @@
 import React from 'react';
+import './Preview.css';
 
 class Preview extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class Preview extends React.Component {
   render() {
     return (
       <div>
-        <p>{this.props.todo.title}</p>
+        <button className='todo' onClick={() => this.props.onSelect()} ><p>{this.props.todo.title}</p></button>
       </div>
     )
   }
