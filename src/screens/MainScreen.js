@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
   return {
     todoList: state.app_reducer.todoList,
     index_todo: state.app_reducer.index_todo,
+    Tmodify_Fdelete: state.app_reducer.Tmodify_Fdelete,
   };
 };
 

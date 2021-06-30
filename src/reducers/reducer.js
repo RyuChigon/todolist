@@ -3,6 +3,7 @@ import types from "../actions/types";
 const initialState = {
   todoList: [],
   index_todo: undefined,
+  Tmodify_Fdelete: undefined,
 }
 
 const reducer = (state = initialState, action) => {
@@ -16,7 +17,7 @@ const reducer = (state = initialState, action) => {
     }
 
     case types.UNSELECT_TODO: {
-      return {...state, index_todo: undefined};
+      return {...state, index_todo: undefined, Tmodify_Fdelete: undefined};
     }
 
     case types.MODIFY_TODO: {
@@ -33,6 +34,18 @@ const reducer = (state = initialState, action) => {
         return index !== state.index_todo;
       });
       return {...state, todoList: new_todoList, index_todo: undefined};
+    }
+
+    case types.PWCHECKFORMODIFY: {
+      return {...state, Tmodify_Fdelete: true};
+    }
+
+    case types.PWCHECKFORDELETE: {
+      return {...state, Tmodify_Fdelete: false};
+    }
+
+    case types.PWCHECKCANCEL: {
+      return {...state, Tmodify_Fdelete: undefined};
     }
 
     default:

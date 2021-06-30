@@ -33,3 +33,18 @@ export const deleteTodo = () => {
   console.log('Action::DELETE_TODO');
   return {type: types.DELETE_TODO};
 };
+
+export const pwCheckForModify = () => {
+  console.log('Action::PWCHECKFORMODIFY');
+  return {type: types.PWCHECKFORMODIFY}
+};
+
+export const pwCheckForDelete = () => {
+  console.log('Action::PWCHECKFORDELETE');
+  return {type: types.PWCHECKFORDELETE};
+}
+
+export const pwCheckCancel = () => {
+  console.log('Action::PWCHECKCANCEL');
+  return {type: types.PWCHECKCANCEL};
+}
