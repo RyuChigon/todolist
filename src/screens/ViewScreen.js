@@ -28,8 +28,7 @@ class ViewScreen extends React.Component {
     const index_todo = this.props.index_todo;
     return (
       <div>
-        <Viewer todo={todoList[index_todo]} />
-        <button><Link to='/'>이전</Link></button>
+        <Viewer todo={todoList[index_todo]} onC={() => this.props.unselectTodo()} />
       </div>
     )
   }

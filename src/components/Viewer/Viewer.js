@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Viewer extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Viewer extends React.Component {
         <p>{this.props.todo.title}</p>
         <p>내용</p>
         <p>{this.props.todo.content}</p>
-        <button onClick={() => this.props.onC()}>목록으로</button>
+        <Link to='/'><button onClick={() => this.props.onC()}>목록으로</button></Link>
       </div>
     )
   }
