@@ -65,12 +65,11 @@ class WriteScreen extends React.Component {
 
   modify = () => {
     this.props.modifyTodo({ writer: this.state.writer, title: this.state.title, content: this.state.content, password: this.state.password });
-    this.props.unselectTodo();
   }
 
   writeOrModify = () => {
     if (this.state.edit === true) {
-      return <Link to='/'><button onClick={() => this.modify()}>수정</button></Link>
+      return <Link to='/view'><button onClick={() => this.modify()}>수정</button></Link>
     } else {
       return <Link to='/'><button onClick={() => this.write()}>작성</button></Link>
     }
