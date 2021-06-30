@@ -1,8 +1,7 @@
 import React from 'react';
-import Header from '../components/Header/Header';
 import Write from '../components/Write/Write';
 import { Link } from 'react-router-dom';
-import { deleteTodo, modifyTodo, unselectTodo, writeTodo } from '../actions/actions';
+import { writeTodo } from '../actions/actions';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
@@ -15,9 +14,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     writeTodo: (todo) => dispatch(writeTodo(todo)),
-    unselectTodo: () => dispatch(unselectTodo()),
-    modifyTodo: (todo) => dispatch(modifyTodo(todo)),
-    deleteTodo: () => dispatch(deleteTodo()),
   };
 };
 
@@ -55,7 +51,6 @@ class WriteScreen extends React.Component {
   render() {
     return (
       <div>
-        <Header />
         <Write 
           {...this.state}
           changeWriter={(text) => this.onChangeWriter(text)}
