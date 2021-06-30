@@ -29,10 +29,10 @@ const reducer = (state = initialState, action) => {
     }
 
     case types.DELETE_TODO: {
-      const new_todoList = state.todos.filter((_, index) => {
+      const new_todoList = state.todoList.filter((_, index) => {
         return index !== state.index_todo;
       });
-      return {...state, notes: new_todoList, index_todo: undefined};
+      return {...state, todoList: new_todoList, index_todo: undefined};
     }
 
     default:
