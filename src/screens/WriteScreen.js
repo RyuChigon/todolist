@@ -76,6 +76,14 @@ class WriteScreen extends React.Component {
     }
   }
 
+  backOrCancel = () => {
+    if (this.state.edit === true) {
+      return <Link to='/view'><button >취소</button></Link>
+    } else {
+      return <Link to='/'><button >이전</button></Link>
+    }
+  }
+
   render() {
     return (
       <div>
@@ -87,7 +95,7 @@ class WriteScreen extends React.Component {
           changePassword={(text) => this.onChangePassword(text)}
         />
         {this.writeOrModify()}
-        <Link to='/'><button >이전</button></Link>
+        {this.backOrCancel()}
       </div>
     )
   }
