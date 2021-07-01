@@ -45,6 +45,7 @@ class ViewScreen extends React.Component {
       comment: this.state.nComment,
     }
     this.props.writeComment(newComment);
+    this.setState({nCommentWriter: '', nComment: ''});
   }
 
 
@@ -60,7 +61,9 @@ class ViewScreen extends React.Component {
           onMain={() => this.props.unselectTodo()} 
           changeNCommentWriter={(text) => this.changeNCommentWriter(text)}
           changeNComment={(text) => this.changeNComment(text)} 
-          onWriteComment={() => this.writeComment()}  />
+          onWriteComment={() => this.writeComment()}
+          nCommentWriter={this.state.nCommentWriter}
+          nComment={this.state.nComment} />
         {commentList.map((comment, index) => {
           return (
             <CommentViewer key={`${this.props.index_todo}::${index}`} 
