@@ -60,7 +60,6 @@ const reducer = (state = initialState, action) => {
         newTodo,
         ...state.todoList.slice(state.index_todo + 1),
       ]
-      console.log(new_todoList);
       return {...state, todoList: new_todoList};
     }
 
