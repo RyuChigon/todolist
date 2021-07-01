@@ -19,6 +19,13 @@ class Viewer extends React.Component {
         <p>내용</p>
         <p>{this.props.todo.content}</p>
         <Link to='/'><SButton onClick={() => this.props.onMain()} name='목록'/></Link>
+        <p>댓글</p>
+        <p>댓글 작성자</p>
+        <input type="text" placeholder="댓글 작성자" value={this.props.nCommentWriter} onChange={(text) => this.props.changeNCommentWriter(text)} />
+        <p>댓글 내용</p>
+        <input type="text" placeholder="댓글 내용" value={this.props.nComment} onChange={(text) => this.props.changeNComment(text)} />
+        <SButton name="댓글 작성" onClick={() => this.props.onWriteComment()} />
+
       </div>
     )
   }

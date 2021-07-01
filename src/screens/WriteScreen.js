@@ -60,7 +60,7 @@ class WriteScreen extends React.Component {
   }
 
   write = () => {
-    this.props.writeTodo({ writer: this.state.writer, title: this.state.title, content: this.state.content, password: this.state.password });
+    this.props.writeTodo({ writer: this.state.writer, title: this.state.title, content: this.state.content, password: this.state.password, commentList: [] });
     this.props.unselectTodo();
   }
 
