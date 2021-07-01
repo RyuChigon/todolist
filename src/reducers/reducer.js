@@ -21,9 +21,11 @@ const reducer = (state = initialState, action) => {
     }
 
     case types.MODIFY_TODO: {
+      const commentList = state.todoList[state.index_todo].commentList;
+      const new_todo = {...action.todo, commentList: commentList}
       const new_todoList = [
         ...state.todoList.slice(0, state.index_todo),
-        action.todo,
+        new_todo,
         ...state.todoList.slice(state.index_todo + 1),
       ];
       return {...state, todoList: new_todoList};
@@ -46,6 +48,20 @@ const reducer = (state = initialState, action) => {
 
     case types.PWCHECKCANCEL: {
       return {...state, Tmodify_Fdelete: undefined};
+    }
+
+    case types.WRITE_COMMENT: {
+      const todo = state.todoList[state.index_todo];
+      const todoCommentList = state.todoList[state.index_todo].commentList;
+      const newCommentList = [...todoCommentList, action.comment];
+      const newTodo = {writer: todo.writer, title: todo.writer, content: todo.content, password: todo.password, commentList: newCommentList};
+      const new_todoList = [
+        ...state.todoList.slice(0, state.index_todo),
+        newTodo,
+        ...state.todoList.slice(state.index_todo + 1),
+      ]
+      console.log(new_todoList);
+      return {...state, todoList: new_todoList};
     }
 
     default:
