@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.commentWriter {
+  grid-column: 1 / 2;
+}
+
+.comment {
+  grid-column: 2 / 6;
+}
+
