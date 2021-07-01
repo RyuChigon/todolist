@@ -48,3 +48,11 @@ export const pwCheckCancel = () => {
   console.log('Action::PWCHECKCANCEL');
   return {type: types.PWCHECKCANCEL};
 }
+
+export const writeComment = (comment) => {
+  console.log('Action::WRITE_COMMENT');
+  return {
+    type: types.WRITE_COMMENT,
+    comment
+  };
+}
