@@ -1,0 +1,13 @@
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.subScreen {
+  width: 30%;
+}
+
+.preview {
+  width: 70%;
+}

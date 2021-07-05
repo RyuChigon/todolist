@@ -1,0 +1,13 @@
+.viewContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.viewSubScreen {
+  width: 30%;
+}
+
+.viewer {
+  width: 70%;
+}

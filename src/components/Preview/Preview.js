@@ -10,7 +10,7 @@ class Preview extends React.Component {
   render() {
     return (
       <div>
-        <Link to='/view'><button className='todo' onClick={() => this.props.onSelect()} ><p>{this.props.todo.title}</p></button></Link>
+        <Link to='/view'><button className='todo' onClick={() => this.props.onSelect()} ><p>작성자:{this.props.todo.writer} 제목:{this.props.todo.title} 좋아요:{this.props.todo.like} 댓글:{this.props.todo.commentList.length}</p></button></Link>
       </div>
     )
   }

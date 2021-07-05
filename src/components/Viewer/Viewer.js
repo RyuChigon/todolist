@@ -22,16 +22,24 @@ class Viewer extends React.Component {
               <p className="writer">{this.props.todo.writer}</p>
             </div>
             <div className="mini_right_btn">
+              <button onClick={() => this.props.onPrevView()} >이전글</button>
+              <button onClick={() => this.props.onNextView()}>다음글</button>
               <Link to='/check'><SButton name='수정' onClick={() => this.props.onModify()} /></Link>
               <Link to='/check'><SButton name='삭제' onClick={() => this.props.onDelete()} /></Link>
               <Link to='/'><SButton onClick={() => this.props.onMain()} name='목록'/></Link>
             </div>
           </div>
         </div>
+        <p>{this.props.todo.like}</p>
         <hr/>
         <p className="content">{this.props.todo.content}</p>
+
+        <button onClick={() => this.props.pressLike()} >좋아요</button>
+        <p>{this.props.todo.like}</p>
+        
         <hr/>
-        <p className="fix">댓글</p>
+
+        <p className="fix">댓글 {this.props.todo.commentList.length}</p>
         <p>댓글 작성자</p>
         <input type="text" placeholder="댓글 작성자" value={this.props.nCommentWriter} onChange={(text) => this.props.changeNCommentWriter(text)} />
         <p>댓글 내용</p>

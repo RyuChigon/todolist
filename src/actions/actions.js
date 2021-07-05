@@ -56,3 +56,18 @@ export const writeComment = (comment) => {
     comment
   };
 }
+
+export const pressLike = () => {
+  console.log('Action::PRESS_LIKE');
+  return {type: types.PRESS_LIKE};
+}
+
+export const prevView = () => {
+  console.log('Action::PREV_VIEW');
+  return {type: types.PREV_VIEW};
+}
+
+export const nextView = () => {
+  console.log('Action::NEXT_VIEW');
+  return {type: types.NEXT_VIEW};
+}

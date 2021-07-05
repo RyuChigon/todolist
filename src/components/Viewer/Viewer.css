@@ -27,14 +27,14 @@
 }
 
 .mini_left {
-  width: 50%;
+  width: 40%;
   display: flex;
   align-items: center;
   flex-flow: row wrap;
 }
 
 .mini_right {
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;

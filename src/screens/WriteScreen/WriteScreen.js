@@ -1,7 +1,7 @@
 import React from 'react';
-import Write from '../components/Write/Write';
+import Write from '../../components/Write/Write';
 import { Link } from 'react-router-dom';
-import { writeTodo, modifyTodo, unselectTodo } from '../actions/actions';
+import { writeTodo, modifyTodo, unselectTodo } from '../../actions/actions';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
@@ -29,6 +29,7 @@ class WriteScreen extends React.Component {
         title: '',
         content: '',
         password: '',
+        like: 0,
         edit: false,
       }
     } else {
@@ -37,6 +38,7 @@ class WriteScreen extends React.Component {
         title: this.props.todoList[this.props.index_todo].title,
         content: this.props.todoList[this.props.index_todo].content,
         password: this.props.todoList[this.props.index_todo].password,
+        like: this.props.todoList[this.props.index_todo].like,
         edit: true,
       }
     }
@@ -60,12 +62,12 @@ class WriteScreen extends React.Component {
   }
 
   write = () => {
-    this.props.writeTodo({ writer: this.state.writer, title: this.state.title, content: this.state.content, password: this.state.password, commentList: [] });
+    this.props.writeTodo({ writer: this.state.writer, title: this.state.title, content: this.state.content, password: this.state.password, commentList: [], like: 0 });
     this.props.unselectTodo();
   }
 
   modify = () => {
-    this.props.modifyTodo({ writer: this.state.writer, title: this.state.title, content: this.state.content, password: this.state.password });
+    this.props.modifyTodo({ writer: this.state.writer, title: this.state.title, content: this.state.content, password: this.state.password, like: this.state.like });
   }
 
   writeOrModify = () => {

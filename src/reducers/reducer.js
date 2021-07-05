@@ -54,13 +54,46 @@ const reducer = (state = initialState, action) => {
       const todo = state.todoList[state.index_todo];
       const todoCommentList = state.todoList[state.index_todo].commentList;
       const newCommentList = [...todoCommentList, action.comment];
-      const newTodo = {writer: todo.writer, title: todo.writer, content: todo.content, password: todo.password, commentList: newCommentList};
+      const newTodo = {writer: todo.writer, title: todo.title, content: todo.content, password: todo.password, commentList: newCommentList, like: todo.like };
       const new_todoList = [
         ...state.todoList.slice(0, state.index_todo),
         newTodo,
         ...state.todoList.slice(state.index_todo + 1),
       ]
       return {...state, todoList: new_todoList};
+    }
+
+    case types.PRESS_LIKE: {
+      const todo = state.todoList[state.index_todo];
+      const todoLike = state.todoList[state.index_todo].like;
+      const newTodoLike = todoLike + 1;
+      const newTodo = {writer: todo.writer, title: todo.title, content: todo.content, password: todo.password, commentList: todo.commentList, like: newTodoLike };
+      const new_todoList = [
+        ...state.todoList.slice(0, state.index_todo),
+        newTodo,
+        ...state.todoList.slice(state.index_todo + 1),
+      ]
+      return {...state, todoList: new_todoList};
+    }
+
+    case types.PREV_VIEW: {
+      if (state.index_todo === 0) {
+        alert('마지막 글입니다.');
+        return {...state};
+      } else if (state.index_todo !== undefined) {
+        const prev_index_todo = state.index_todo - 1;
+        return {...state, index_todo: prev_index_todo};
+      }
+    }
+
+    case types.NEXT_VIEW: {
+      if (state.todoList.length === state.index_todo + 1) {
+        alert('마지막 글입니다.');
+        return {...state};
+      } else if (state.index_todo !== undefined) {
+        const prev_index_todo = state.index_todo + 1;
+        return {...state, index_todo: prev_index_todo};
+      }
     }
 
     default:
