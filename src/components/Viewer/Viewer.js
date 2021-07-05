@@ -28,9 +28,8 @@ class Viewer extends React.Component {
             </div>
           </div>
         </div>
-
         <hr/>
-        <p>{this.props.todo.content}</p>
+        <p className="content">{this.props.todo.content}</p>
         <hr/>
         <p className="fix">댓글</p>
         <p>댓글 작성자</p>
