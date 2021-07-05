@@ -1,9 +1,9 @@
 import types from "../actions/types";
 
 const initialState = {
-  todoList: [],
-  index_todo: undefined,
-  Tmodify_Fdelete: undefined,
+  todoList: [], //글은 todo, 글 목록은 todoList로 정의한다.
+  index_todo: undefined, //현재 선택된 todo의 index(todoList안의 todo의 index)를 저장한다. 
+  Tmodify_Fdelete: undefined, //true 상태이면 수정, false 상태이면 삭제. 평상시에는 undefined로 되어있다.
 }
 
 const reducer = (state = initialState, action) => {

@@ -22,8 +22,8 @@ class Viewer extends React.Component {
               <p className="writer">{this.props.todo.writer}</p>
             </div>
             <div className="mini_right_btn">
-              <button onClick={() => this.props.onPrevView()} >이전글</button>
-              <button onClick={() => this.props.onNextView()}>다음글</button>
+              <SButton name="이전글" onClick={() => this.props.onPrevView()} />
+              <SButton name="다음글" onClick={() => this.props.onNextView()} />
               <Link to='/check'><SButton name='수정' onClick={() => this.props.onModify()} /></Link>
               <Link to='/check'><SButton name='삭제' onClick={() => this.props.onDelete()} /></Link>
               <Link to='/'><SButton onClick={() => this.props.onMain()} name='목록'/></Link>
@@ -34,7 +34,7 @@ class Viewer extends React.Component {
         <hr/>
         <p className="content">{this.props.todo.content}</p>
 
-        <button onClick={() => this.props.pressLike()} >좋아요</button>
+        <SButton name="좋아요" onClick={() => this.props.pressLike()} />
         <p>{this.props.todo.like}</p>
         
         <hr/>
