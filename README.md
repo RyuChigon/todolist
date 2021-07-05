@@ -7,16 +7,25 @@ Start: 2021.06.28
 components, screens 폴더에는 해당 이름의 폴더로 또 한 번 구성되어 있습니다. 폴더 안에는 js 파일과 css 파일. 두 파일로 구성되어 있습니다.
 
 public
+
 ㄴ favicon.ico : html head 아이콘
+
 ㄴ index.html
 
+
 src
+
 ㄴ actions
+
     ㄴ actions.js : actions 정의
+
     ㄴ index.js
+
     ㄴ types.js : types 정의
 
+
 ㄴ components
+
     ㄴ CommentViewer : 댓글 보는 뷰어 (댓글 작성자, 댓글 내용)
 
     ㄴ Header : Header (게시판 이름, 작성 버튼)
@@ -32,10 +41,13 @@ src
     ㄴ Write : WriteScreen에서 사용되는 input들로 구성.
 
 ㄴ reducers
+
     ㄴ index.js
+
     ㄴ reducer.js
 
 ㄴ screens
+
     ㄴ MainScreen : 메인 페이지로 글 목록을 보여줌
     
     ㄴ PWCheckScreen : 글 수정/삭제시 비밀번호 확인을 위한 페이지
@@ -45,4 +57,5 @@ src
     ㄴ WriteScreen : 글을 작성하는 페이지 (글을 수정시에도 이 페이지를 사용합니다)
 
 ㄴ index.css
+
 ㄴ index.js
