@@ -1,0 +1,48 @@
+.fix {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.title {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.writer {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.mini {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.mini_left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.mini_right {
+  width: 50%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.mini_right_left {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.mini_right_btn {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
