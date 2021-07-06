@@ -23,7 +23,7 @@ const mapDispatchToProps = (dispatch) => {
 class WriteScreen extends React.Component {
   constructor(props) {
     super(props);
-    if (this.props.index_todo === undefined) {
+    if (this.props.Tmodify_Fdelete === undefined) {
       this.state = {
         writer: '',
         title: '',
